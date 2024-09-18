@@ -1,0 +1,18 @@
+id: directory-listing-wp
+
+info:
+  name: directory-listing-wp
+  author: 111xnagashy
+  description: Directory listing on wp-content/plugins/eventon-sync-events/
+  severity: medium
+  tags: info ,information disclosure ,directory listing
+
+requests: 
+  - method: GET
+    path:
+      - "{{BaseURL}}/wp-content/plugins/eventon-sync-events/"
+    matchers:
+      - type: word
+        part: body
+        words: 
+          - "Index of" 
